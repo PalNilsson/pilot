@@ -168,10 +168,13 @@ class ATLASSiteInformation(SiteInformation):
         dictionary = self.getFullQueuedataDictionary()
         if dictionary != {}:
             for queuename in dictionary.keys():
-                if ddm in dictionary[queuename]['ddm']:
-                    cloud = dictionary[queuename]['cloud']
-                    tolog("Found cloud=%s for ddm=%s at queuename=%s" % (cloud, ddm, queuename))
-                    break
+                if dictionary[queuename].has_key("ddm"):
+                    if ddm in dictionary[queuename]['ddm']:
+                        cloud = dictionary[queuename]['cloud']
+                        tolog("Found cloud=%s for ddm=%s at queuename=%s" % (cloud, ddm, queuename))
+                        break
+                else:
+                    tolog("!!WARNING!!2323!! dictionary[queuename] does not have key \'ddm\' (cannot find corresponding cloud)")
 
         return cloud
 

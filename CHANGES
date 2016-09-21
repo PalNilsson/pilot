@@ -496,6 +496,9 @@ Looping job killer update:
 User request to allow AtlasOffline nightlies releases (same setup as AtlasDerivation)
 - Update getCacheInfo() to handle AtlasOffline nightlies releases (ATLASExperiment)
 
+Alt. stage-out broken in old algorithm:
+- Protected against missing ddm key in getCorrespondingCloud() (ATLASSiteInformation)
+
 Updates from Wen Guan:
 
 Commit Summary
